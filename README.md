@@ -21,10 +21,3 @@ Este proyecto es una aplicación web interactiva que muestra un mapa de España 
    
 2. **Node.js y npm**: Necesitas tener Node.js y npm instalados en tu máquina para poder ejecutar la aplicación.
 
-## Instalación
-
-1. **Clonar el repositorio**:
-
-   ```bash
-   git clone https://github.com/tu_usuario/espana-mapa-meteorologico.git
-   cd espana-mapa-meteorologico
