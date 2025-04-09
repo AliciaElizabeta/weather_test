@@ -26,7 +26,7 @@ function WeatherDataCard({ data }){
                 </button>
                 <div>
                     <h4>{data.nombre} </h4>
-                    <h6>{dia.fecha}</h6>
+                    <h6>{dia.fecha.split('T')[0]}</h6>
                 </div>
                 <button onClick={handleNext} className="WeatherDataCard-ButtonDate">
                 ⮞
