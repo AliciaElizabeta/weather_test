@@ -1,12 +1,30 @@
-# React + Vite
+# Mapa Interactivo de España con Predicción Meteorológica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web interactiva que muestra un mapa de España y permite seleccionar diferentes provincias o municipios para obtener la predicción meteorológica de hoy. Utiliza la API de AEMET (Agencia Española de Meteorología) para obtener los datos climáticos.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Mapa interactivo**: Se utiliza la librería `react-simple-maps` para mostrar un mapa de España interactivo con la posibilidad de hacer clic en diferentes provincias para obtener la predicción meteorológica.
+- **Predicción diaria**: Al hacer clic en una provincia, la aplicación obtiene la predicción meteorológica de hoy para ese municipio utilizando la API de AEMET.
+- **Información meteorológica**: La predicción incluye detalles como el estado del cielo, temperatura máxima y mínima para el día actual.
 
-## Expanding the ESLint configuration
+## Tecnologías
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: La librería de JavaScript utilizada para crear la interfaz de usuario.
+- **Axios**: Para hacer las solicitudes HTTP a la API de AEMET.
+- **React Simple Maps**: Utilizado para crear el mapa interactivo.
+- **AEMET API**: API pública de la Agencia Española de Meteorología para obtener datos meteorológicos.
+
+## Requisitos
+
+1. **API Key de AEMET**: Necesitas obtener una clave de API para acceder a los datos de la Agencia Española de Meteorología. Regístrate [aquí](https://opendata.aemet.es/centrodedescargas/inicio) para obtenerla.
+   
+2. **Node.js y npm**: Necesitas tener Node.js y npm instalados en tu máquina para poder ejecutar la aplicación.
+
+## Instalación
+
+1. **Clonar el repositorio**:
+
+   ```bash
+   git clone https://github.com/tu_usuario/espana-mapa-meteorologico.git
+   cd espana-mapa-meteorologico
