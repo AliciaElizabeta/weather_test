@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import axios from "axios";
 import WeatherDataCard from './WeatherDataCard';
+import './SpainMap.css'
 
 const AEMET_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGljaWFtYXJyZXJvcmF2ZWxvQGdtYWlsLmNvbSIsImp0aSI6ImFjYzU3YWViLWQ2YjEtNGFlYS05YWU4LWEwZWY4ZDViNzY2ZCIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNzQ0MTk1NDAwLCJ1c2VySWQiOiJhY2M1N2FlYi1kNmIxLTRhZWEtOWFlOC1hMGVmOGQ1Yjc2NmQiLCJyb2xlIjoiIn0.wlmF5CMu9RjJJRwr9uSI1HKR1ibNtj4DfjvPFZ6cYrI"; 
 const geoUrl ="https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/spain-provinces.geojson"
@@ -96,7 +97,7 @@ function SpainMap() {
 
 
     return (
-        <>
+        <div className='container'>
         <ComposableMap
             projection="geoMercator"
             projectionConfig={{
@@ -149,7 +150,7 @@ function SpainMap() {
             <WeatherDataCard data={weatherData}></WeatherDataCard>
         )}
         
-        </>
+        </div>
     );
 }
 
