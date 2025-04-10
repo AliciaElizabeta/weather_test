@@ -62,7 +62,7 @@ const provinceToMunicipality = {
   };
 
 function SpainMap() {
-
+    const [selectedProvince, setSelectedProvince] = useState(null);
     const [postalCode, setpostalCode] = useState(null);
     const [weatherData, setWeatherData] = useState(null);
 
@@ -120,13 +120,14 @@ function SpainMap() {
                     const muniId = provinceToMunicipality[codProv];
                     if (muniId) {
                       setpostalCode(muniId);
+                      setSelectedProvince(geo.rsmKey); 
                     } else {
                       console.warn("Municipio no encontrado para", codProv);
                     }
                   }}
                   style={{
                     default: {
-                      fill: "#E0E0E0",
+                      fill: selectedProvince === geo.rsmKey ? "#0056b3" : "#E0E0E0", // Color si está seleccionada
                       stroke: "#FFF",
                       strokeWidth: 0.5,
                       outline: "none",
@@ -146,9 +147,7 @@ function SpainMap() {
           </Geographies>
         </ComposableMap>
 
-        {(weatherData != null) && (
-            <WeatherDataCard data={weatherData}></WeatherDataCard>
-        )}
+        <WeatherDataCard data={weatherData}></WeatherDataCard>
         
         </div>
     );

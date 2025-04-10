@@ -4,7 +4,25 @@ import './WeatherDataCard.css'
 function WeatherDataCard({ data }){
     const [dayIndex, setDayIndex] = useState(0);
 
-    if (!data || !data.prediccion || !data.prediccion.dia) return null;
+    if (!data) return (
+      <div className='WeatherDataCard'>        
+        <div className='WeatherDataCard-Header '>
+            <button className="WeatherDataCard-ButtonDate">
+            ⮜ 
+            </button>
+            <div>
+                <h4> Su provincia </h4>
+            </div>
+            <button className="WeatherDataCard-ButtonDate">
+            ⮞
+            </button>
+        </div>
+    
+        <div className='WeatherDataCard-Description'>
+            <p><strong>Seleccione su provincia en el mapa</strong></p>
+        </div>
+      </div>
+    )
 
     const dias = data.prediccion.dia;
     const dia = dias[dayIndex];
@@ -17,7 +35,6 @@ function WeatherDataCard({ data }){
       setDayIndex((prev) => (prev < dias.length - 1 ? prev + 1 : 0));
     };
 
-    
     return (
         <div className='WeatherDataCard'>        
             <div className='WeatherDataCard-Header '>
@@ -34,15 +51,13 @@ function WeatherDataCard({ data }){
             </div>
         
             <div className='WeatherDataCard-Description'>
-                <p><strong>Temperatura máxima:</strong> {dia.temperatura.maxima}°C</p>
-                <p><strong>Temperatura mínima:</strong> {dia.temperatura.minima}°C</p>
-                <p><strong>Estado del cielo (mañana):</strong> {dia.estadoCielo[0]?.descripcion || 'N/A'}</p>
-                <p><strong>Estado del cielo (tarde):</strong> {dia.estadoCielo[1]?.descripcion || 'N/A'}</p>
-                <p><strong>Estado del cielo (noche):</strong> {dia.estadoCielo[2]?.descripcion || 'N/A'}</p>
-                <p><strong>Humedad relativa:</strong> {dia.humedadRelativa?.maxima}% / {dia.humedadRelativa?.minima}%</p>
+                <p><strong>Temperaturas:</strong> {dia.temperatura.maxima}°C - {dia.temperatura.minima}°C</p>
+                <p><strong>Cielo (mañana):</strong> {dia.estadoCielo[0]?.descripcion || 'N/A'}</p>
+                <p><strong>Cielo (tarde):</strong> {dia.estadoCielo[1]?.descripcion || 'N/A'}</p>
+                <p><strong>Cielo (noche):</strong> {dia.estadoCielo[2]?.descripcion || 'N/A'}</p>
+                <p><strong>Humedad:</strong> {dia.humedadRelativa?.maxima}% - {dia.humedadRelativa?.minima}%</p>
             </div>
           </div>
-
       );
 }
 

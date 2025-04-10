@@ -1,5 +1,5 @@
 .WeatherDataCard{
-    max-width:16rem;
+    width:16rem;
 }
 
 .WeatherDataCard-Header{
@@ -19,6 +19,8 @@
     flex-direction: column;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: -webkit-fill-available;
+    justify-content: center;
 }
 
 .WeatherDataCard-ButtonDate{
